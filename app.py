@@ -48,7 +48,7 @@ if uploaded:
     left, right = st.columns(2)
 
     with left:
-        st.image(image, caption="Uploaded MRI", width=500)
+        st.image(image, caption="Uploaded MRI", use_container_width=True)
 
     resized = image.resize((int(image_size[1]), int(image_size[0])))
     arr = np.asarray(resized, dtype=np.float32)
