@@ -1,0 +1,14 @@
+{
+    "model_name": "Fine-Tuned MobileNetV2",
+    "class_names": [
+        "glioma_tumor",
+        "meningioma_tumor",
+        "no_tumor",
+        "pituitary_tumor"
+    ],
+    "image_size": [
+        224,
+        224
+    ],
+    "educational_use_only": true
+}
