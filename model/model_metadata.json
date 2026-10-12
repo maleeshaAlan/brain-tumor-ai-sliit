@@ -1,0 +1,65 @@
+{
+  "model_owner": "Somarathne R.N.N",
+  "owner_it_number": "IT25100295",
+  "owner_member_no": 6,
+  "member": 6,
+  "student": "Somarathne R.N.N",
+  "it_number": "IT25100295",
+  "selected_model": "DenseNet121",
+  "weights": "ImageNet",
+  "pretrained": true,
+  "selected_variant": "A",
+  "selected_variant_name": "Strong Transfer Learning",
+  "variant_names": {
+    "A": "Strong Transfer Learning",
+    "B": "Deep Regularized Fine-Tuning"
+  },
+  "selection_metric": "Validation Macro F1",
+  "checkpoint_monitor": "val_f1_macro",
+  "class_names": [
+    "glioma_tumor",
+    "meningioma_tumor",
+    "no_tumor",
+    "pituitary_tumor"
+  ],
+  "dataset": "maleeshaweerakkody/brain-tumor-mri-preprocessed",
+  "image_size": [
+    224,
+    224,
+    3
+  ],
+  "external_dataset_preprocessing": "Final dataset is already resized/padded to 224x224 and CLAHE-enhanced by the group preprocessing pipeline.",
+  "model_specific_preprocessing_is_saved_in_model": true,
+  "variant_configs": {
+    "A": {
+      "dense": 128,
+      "dropout": 0.35,
+      "learning_rate": 0.0003,
+      "fine_tune_last": 50,
+      "fine_tune_lr": 1e-05,
+      "glioma_weight": 1.0
+    },
+    "B": {
+      "dense": 256,
+      "dropout": 0.5,
+      "learning_rate": 0.0001,
+      "fine_tune_last": 80,
+      "fine_tune_lr": 5e-06,
+      "glioma_weight": 1.0
+    }
+  },
+  "validation_metrics": {
+    "accuracy": 0.8895027624309392,
+    "precision_macro": 0.892264460321144,
+    "recall_macro": 0.8802340515736446,
+    "f1_macro": 0.8834680554741318
+  },
+  "test_metrics": {
+    "accuracy": 0.6979695431472082,
+    "precision_macro": 0.7209803479972641,
+    "recall_macro": 0.695580549493593,
+    "f1_macro": 0.676116708881485
+  },
+  "class_weight_note": "EfficientNetB0 ImageNet Variant B tests a mild glioma weight of 1.40 because the previous model showed glioma-to-meningioma confusion; other variants use 1.0.",
+  "model_name": "MobileNetV3 Mini"
+}
